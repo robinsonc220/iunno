@@ -1,0 +1,258 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* html, body{
+  height: 100%;
+}
+body { 
+			background-image: url(https://images.unsplash.com/photo-1547573854-74d2a71d0826?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80) ;
+			background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+			background-size:  cover;
+			background-color: #999;
+  
+}
+
+div, body{
+  margin: 0;
+  padding: 0;
+  font-family: exo, sans-serif;
+   */
+
+
+
+/* BIG BUTTON */
+
+.bigbutton-wrap {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 300px;
+  height: 300px;
+  background: #e0e0e0;
+  border-radius: 500px;
+  border-top: 1px solid rgba(255,255,255,.65);
+  border-bottom: 1px solid rgba(255,255,255,.65);
+  box-shadow: 0 0 50px rgba(0,0,0,.1);
+}
+
+.bigbutton-wrap:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: .5;
+  transition: all .25s ease;
+  
+background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 57%, rgba(0,0,0,0) 69%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.65)), color-stop(57%,rgba(0,0,0,0.65)), color-stop(69%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 57%,rgba(0,0,0,0) 69%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 57%,rgba(0,0,0,0) 69%,rgba(0,0,0,0) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 57%,rgba(0,0,0,0) 69%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 57%,rgba(0,0,0,0) 69%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
+}
+
+.big-button  span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: normal;
+  font-weight: normal;
+  color: #999;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.big-button:hover span {
+  opacity: 1;
+  color: #555;
+}
+
+
+.big-button {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+  margin-top: 5%;
+  border: none;
+  font-weight: bold;
+  letter-spacing: -.05em;
+  color: #ccc;
+  text-shadow: 0 2px 0 rgba(255,255,255,1);
+  font-size: 45px;
+  z-index: 2;
+  /* box-shadow: 10px 10px 10px rgba(0,0,0,.1); */
+  border: 1px solid #fafafa;
+  transition: drop-shadow .25s ease;
+
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 19%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(19%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 19%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(255,255,255,1) 19%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 19%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(255,255,255,1) 19%,rgba(229,229,229,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+}
+
+.bigbutton-wrap:active 
+.bigbutton-wrap:active:before {
+  width: 96%;
+  height: 96%;
+  left: 2%;
+  top: 2%;
+}
+
+.big-button:hover,
+.clicked button{
+  color: #57A0DB;
+  background: rgb(254,255,255); /* Old browsers */
+background: -moz-linear-gradient(-45deg,  rgba(254,255,255,1) 0%, rgba(210,235,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(254,255,255,1)), color-stop(100%,rgba(210,235,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* IE10+ */
+background: linear-gradient(135deg,  rgba(254,255,255,1) 0%,rgba(210,235,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+
+/* ----------------------Password---------------------------------- */
+
+/* body, html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(#607d8b, #455a64);
+  font-family: 'Roboto', sans-serif;
+} */
+/* form {
+  margin: 3em auto;
+  max-width: 320px;
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+} */
+.password {
+  display: block;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  color: #727272;
+}
+.password__input {
+  display: block;
+  text-transform: none;
+  width: 100%;
+  height: 42px;
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: #b6b6b6;
+  font-weight: 400;
+  color: #212121;
+}
+.password__input:focus, .password__input:active {
+  border-color: #00bcd4;
+  outline: 0;
+}
+.password__show {
+  cursor: pointer;
+  position: absolute;
+  bottom: 11px;
+  height: 16px;
+  right: 0;
+  background: #727272;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+.password__strength {
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: -8px;
+  left: 0;
+  background: transparent;
+  transition: all 300ms ease-in-out;
+}
+.password__strength[data-score="null"] {
+  width: 0;
+  background: red;
+}
+.password__strength[data-score="0"] {
+  width: 5%;
+  background: #f44336;
+}
+.password__strength[data-score="1"] {
+  width: 25%;
+  background: #f44336;
+}
+.password__strength[data-score="2"] {
+  width: 50%;
+  background: #ffeb3b;
+}
+.password__strength[data-score="3"] {
+  width: 75%;
+  background: #4caf50;
+}
+.password__strength[data-score="4"] {
+  width: 100%;
+  background: #4caf50;
+}
+/* ------------------Background Color------------------------- */
+
+#vantajs {
+  width: auto; height: 600px; margin-bottom: 10px;
+}

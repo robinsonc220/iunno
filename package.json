@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@stardust-ui/docs-components": "^0.40.0",
+    "a11y-react-emoji": "^1.1.2",
+    "p5": "^1.0.0",
+    "react-rotating-text": "^1.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "three": "^0.114.0",
+    "vanta": "^0.5.10",
+    "zxcvbn": "^4.4.2"
+  }
+}
