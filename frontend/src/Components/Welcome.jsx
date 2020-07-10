@@ -3,7 +3,7 @@ import { Button, Divider, Image} from 'semantic-ui-react'
 import ReactRotatingText from 'react-rotating-text'
 import { NavLink } from 'react-router-dom'
 import iunnologoorange from '../Assets/iunnologoorange.png'
-// import dinner from '../Assets/dinner.jpg'
+import dinner from '../Assets/dinner.jpg'
 import '/Users/ravenrosa/Desktop/Flatiron School/Mod5/iunno/frontend/src/CustomColors.css'
 
 

@@ -19,8 +19,8 @@ export default class OrderButton extends React.Component {
         return (
 
             <>
-                <div class="bigbutton-wrap">
-                    <button class="big-button" onClick={this.show('blurring')}><Image centered size='medium' src={iunnologo4button}/></button>
+                <div className="bigbutton-wrap">
+                    <button className="big-button" onClick={this.show('blurring')}><Image centered size='medium' src={iunnologo4button}/></button>
                 </div>
 
                 <Modal size='mini' dimmer={dimmer} open={open} onClose={this.close}>
@@ -30,7 +30,7 @@ export default class OrderButton extends React.Component {
                     </Modal.Content>
                     <Modal.Actions>
                         <Button compact onClick={this.close} negative>Ahhh No!! <Emoji symbol="😓" /> </Button>
-                        <Button compact onClick={()=>{this.props.createOrder(); this.props.increment()}} positive icon='checkmark' labelPosition='right'>Confirm Order<Emoji symbol="😆"/></Button>
+                        <Button compact onClick={()=>{this.props.createOrder(); this.props.increment()}} positive >Confirm Order<Emoji symbol="😆"/></Button>
                     </Modal.Actions>
                 </Modal>
             </>

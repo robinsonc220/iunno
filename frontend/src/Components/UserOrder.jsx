@@ -27,11 +27,11 @@ return (
         <>
         <Grid.Column>
         <Card className="userOrder" onClick={this.show('blurring')}>
-        <Image src={this.props.order.restaurants[0].img_url} wrapped ui={false} />
+        {/* <Image src={this.props.order.restaurants[0].img_url} wrapped ui={false} /> */}
         <Card.Content>
         <Card.Header>{this.props.order.restaurants[0].name}</Card.Header>
         <Card.Meta> 
-            <span className='date'>Ordered on {this.props.order.created_at}</span>
+            <span className='date'>Ordered on {this.props.order.created_at.split("T")[0]}</span>
         </Card.Meta>
         <Card.Description>
             {this.props.order.meals[0].name}

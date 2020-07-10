@@ -7,13 +7,20 @@ import Confirmation from './Confirmation.jsx'
 export default class Homepage extends React.Component {
 
     state = {
-        sessionQty: 0,
+        // sessionQty: 0,
         qtyTerm: "",
         orderCreated: false,
         removeButton: false,
         sessionOrder: {},
         percent: 0
     }
+
+    componentDidMount() {
+      
+this.props.chooseRestaurant()
+  
+       
+      }
 
     increment = () =>
     this.setState((prevState) => ({
@@ -30,9 +37,15 @@ export default class Homepage extends React.Component {
 
     }
 
+    // for(var i=0; i < times; i++){
+    // doSomething();
+
 
     createOrder = () => {
-      let randomMeal = this.props.chooseMeal();
+
+      let randomMeal = () => { for (var i=0; i < this.state.sessionQty; i++) {
+        this.props.chooseMeal()}
+      }
 
        fetch(`http://localhost:3000/api/v1/orders`, {
             method: 'POST',
@@ -72,7 +85,7 @@ export default class Homepage extends React.Component {
           return <OrderButton key={'orderbutton'} increment={this.increment} sessionQty={this.state.sessionQty} createOrder={this.createOrder} chooseMeal={this.props.chooseMeal} randomMeal={this.props.randomMeal} />
         } else if (this.state.orderCreated === true ) {
           // console.log(this.props.randomMeal)
-          return <Confirmation key={'confirmtion'} user={this.props.user} randomMeal={this.props.randomMeal} sessionOrder={this.state.sessionOrder}/>
+          return <Confirmation key={'confirmtion'} user={this.props.user} randomRestaurant={this.props.randomRestaurant} randomMeal={this.props.randomMeal} sessionOrder={this.state.sessionOrder}/>
         } else {
           return <Quantity key={'quantity'} user={this.props.user} increment={this.increment} qtyTerm={this.state.qtyTerm} addQty={this.addQty} handleOnChange={this.handleOnChange}/>
         }
@@ -81,8 +94,7 @@ export default class Homepage extends React.Component {
     render() {
 // console.log(this.props.randomMeal)
 // console.log(this.state.sessionOrder)
-console.log(this.state.orderCreated)
-
+console.log(this.state, "HOMEPAGE STATE")
         return (
             <>
                 <Grid textAlign='center' style={{ height: '1vh' }} verticalAlign='middle'>

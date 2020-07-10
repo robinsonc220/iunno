@@ -24,18 +24,34 @@ class App extends React.Component {
       id: 0
     },
     token: "",
-    allMeals: [],
+    allRestaurants: [],
+    randomRestaurant: {},
+    rrMeals: [],
     randomMeal: [],
-    // sessionOrder: {},
+    sessionQty: 0,
     userHistory: []
   }
 
+  chooseRestaurant= () => {
+    let randomRestaurant = this.state.allRestaurants[Math.floor(Math.random()*this.state.allRestaurants.length)]
+    this.setState({randomRestaurant: randomRestaurant , rrMeals: randomRestaurant.meals})
+  }
+
   chooseMeal = () => {
-    // this.setState({ randomMeal: this.state.allMeals[Math.floor(Math.random()*this.state.allMeals.length)] }) 
-    let randomMeal = this.state.allMeals[Math.floor(Math.random()*this.state.allMeals.length)]
+    // let randomRestaurant = this.state.allRestaurants[Math.floor(Math.random()*this.state.allRestaurants.length)]
+    // this.setState({randomRestaurant: randomRestaurant , rrMeals: randomRestaurant.meals})
+    // debugger
+    let randomMeal = this.state.rrMeals[Math.floor(Math.random()*this.state.rrMeals.length)]
     this.setState({randomMeal: randomMeal})
     return randomMeal
   }
+
+  // let randomRestaurant = this.state.allRestaurants[Math.floor(Math.random()*this.state.allRestaurants.length)]
+  // this.setState({randomRestaurant: randomRestaurant , rrMeals: randomRestaurant.meals})
+  // // debugger
+  // let randomMeal = this.state.rrMeals[Math.floor(Math.random()*this.state.rrMeals.length)]
+  // this.setState({randomMeal: randomMeal})
+  // return randomMeal
   
 
   setHistory = () => { return this.state.user.orders.map(order => {
@@ -72,16 +88,16 @@ class App extends React.Component {
           })
         }
       })
-      // this.setHistory()
     }
 // ------------------------------
-    fetch('http://localhost:3000/api/v1/meals')
+    fetch('http://localhost:3000/api/v1/restaurants')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          allMeals: data
+          allRestaurants: data
         });
       })
+      
 
       // fetch(`http://localhost:3000/api/v1/users/${this.state.user.id}`)
       // .then(res => res.json())
@@ -176,7 +192,7 @@ class App extends React.Component {
           <Route path="/register" render={() => <RegForm formName="Register Form" log={this.log} reg={this.reg} handleSubmit={this.handleRegisterSubmit}/>} />
           <Route path="/profile" render={ this.renderProfile } />
           {/* <Route path="/confirmation" render={() => <Confirmation user={this.state.user} randomMeal={this.state.randomMeal} />}  /> */}
-          <Route path="/homepage" render={() => <Homepage chooseMeal={this.chooseMeal} user={this.state.user}  randomMeal={this.state.randomMeal}/>}  />
+          <Route path="/homepage" render={() => <Homepage chooseMeal={this.chooseMeal} chooseRestaurant={this.chooseRestaurant} user={this.state.user} randomRestaurant={this.state.randomRestaurant} randomMeal={this.state.randomMeal}/>}  />
           <Route path="/history" exact render={() => <History user={this.state.user} userHistory={this.state.userHistory}/> } />
           <Route path="/" exact render={() => <Welcome user={this.state.user}/> } />
           <Route render={ () => <center><h1>You lost bruh?? Page not Found</h1> <Image className='App-logo' src={iunnologoblack}/> </center>} />
